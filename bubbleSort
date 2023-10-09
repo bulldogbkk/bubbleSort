@@ -1,34 +1,34 @@
-function bubbleSort(arr)
+FUNCTION bubbleSort(arr)
     n <- length(arr)
 
     # Traverse through all array elements
-    for i <- 0 to n - 1 do
-        swapped <- False
+    FOR i <- 0 TO n - 1
+        swapped <- FALSE
 
         # Last i elements are already in place
-        for j <- 0 to n - i - 2 do
+        FOR j <- 0 TO n - i - 2 
 
             # Traverse the array from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
-            if arr[j] > arr[j+1] then
+            IF arr[j] > arr[j+1] THEN
                 # Swap elements arr[j] and arr[j+1]
                 swap(arr[j], arr[j+1])
                 swapped <- True
-            end if
-        end for
+            END IF
+        NEXT
 
         # If no two elements were swapped in the inner loop,
         # the array is already sorted, and we can break out
-        if swapped = False then
-            break
-        end if
-    end for
-end function
+        IF swapped = FALSE THEN
+            BREAK
+        END IF
+    NEXT
+END FUNCTION
 
 # Swap function to swap two elements in an array
-function swap(a, b)
+FUNCTION swap(a, b)
     temp <- a
     a <- b
     b <- temp
-end function
+END FUNCTION
